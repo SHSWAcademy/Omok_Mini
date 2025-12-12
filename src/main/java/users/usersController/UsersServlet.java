@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import users.usersService.UserService;
+
 /**
  * Servlet implementation class UsersServlet
  */
@@ -19,11 +21,10 @@ import javax.servlet.http.HttpServletResponse;
 
 })
 public class UsersServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	
+	private static final UserService USERSERVICE = UserService.getInstance();
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
 		
@@ -39,25 +40,23 @@ public class UsersServlet extends HttpServlet {
 
 		} 
 
-	} //doGet
-		/**
-		 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-		 */
-		protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-			String uri = req.getRequestURI();
+	} 
+	
+	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		String uri = req.getRequestURI();
 
-			if (uri.equals("/sign/signup")) {
-				
+		if (uri.equals("/sign/signup")) {
 			
-			} else if (uri.equals("/sign/signup")) {
-				
+		
+		} else if (uri.equals("/sign/signup")) {
 			
-			} else if (uri.equals("/sign/signIn")) {
+		
+		} else if (uri.equals("/sign/signIn")) {
 
-			}else if (uri.equals("/sign/signWithdraw")) {
+		}else if (uri.equals("/sign/signWithdraw")) {
 
-			}
-		} // dopost
+		}
+	} 
 		
 	
 

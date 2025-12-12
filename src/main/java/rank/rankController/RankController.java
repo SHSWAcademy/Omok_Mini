@@ -7,23 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class RankServlet
- */
-@WebServlet("/rank")
-public class RankServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+import rank.rankService.RankService;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+@WebServlet("/rank")
+public class RankController extends HttpServlet {
+
+	private static final RankService RANKSERVICE = RankService.getInstance();
+
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

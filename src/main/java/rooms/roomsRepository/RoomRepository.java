@@ -1,5 +1,5 @@
 package rooms.roomsRepository;
 
-public class RoomsDAO {
+public class RoomRepository {
 
 }

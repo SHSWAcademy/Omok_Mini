@@ -1,5 +1,23 @@
 package rank.rankService;
 
-public class RankService {
+import rank.rankRepository.RankRepository;
 
+public class RankService {
+	
+	private static final RankRepository RANKREPOSITORY = RankRepository.getInstance();
+	
+	private static volatile RankService instance;
+
+    private RankService() { }
+
+    public static RankService getInstance() {
+        if (instance == null) {
+            synchronized (RankService.class) {
+                if (instance == null) {
+                    instance = new RankService();
+                }
+            }
+        }
+        return instance;
+    }
 }
