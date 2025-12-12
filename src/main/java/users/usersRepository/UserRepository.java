@@ -8,7 +8,7 @@ import java.util.List;
 
 import Repository.OmokRepository;
 
-public class UserRepository extends OmokRepository<User, Integer>{
+public class UserRepository extends OmokRepository<User, String>{
 
 	private static volatile UserRepository instance;
 
@@ -27,8 +27,14 @@ public class UserRepository extends OmokRepository<User, Integer>{
 
 	@Override
 	protected User mapRow(ResultSet rs) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+	    User user = new User();
+		user.setSeqId(rs.getInt("SEQ_ID"));
+	    user.setUserId(rs.getString("USER_ID"));
+	    user.setUserPw(rs.getString("USER_PW"));
+	    user.setEmail(rs.getString("EMAIL"));
+	    user.setNickname(rs.getString("NICKNAME"));
+	    
+		return user;
 	}
 
 	@Override
@@ -38,9 +44,23 @@ public class UserRepository extends OmokRepository<User, Integer>{
 	}
 
 	@Override
-	public User findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+	public User findById(String id) {
+		String sql = "SELECT * FROM users WHERE user_id = ?";
+	    
+	    return executeQuery(sql,
+	        pstmt -> pstmt.setString(1, id),
+	        rs -> {
+	            try {
+					if (rs.next()) {
+					    return mapRow(rs);
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	            return null;
+	        }
+	    );
 	}
 
 	@Override
@@ -56,7 +76,7 @@ public class UserRepository extends OmokRepository<User, Integer>{
 	}
 
 	@Override
-	public int delete(Integer id) {
+	public int delete(String id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

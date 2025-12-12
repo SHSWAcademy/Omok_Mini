@@ -1,5 +1,6 @@
 package users.usersService;
 
+import users.User;
 import users.usersRepository.UserRepository;
 
 public class UserService {
@@ -20,5 +21,16 @@ public class UserService {
             }
         }
         return instance;
+    }
+    
+    public User login(String userId, String userPW) {
+        User user = USERREPOSITORY.findById(userId);
+        if (user == null) {
+        	return null;
+        }
+        if (!user.getUserPw().equals(userPW)) {
+            return null;
+        }
+        return user;
     }
 }
