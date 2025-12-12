@@ -31,13 +31,14 @@ public class UsersServlet extends HttpServlet {
 		String uri = req.getRequestURI();
 
 		if (uri.equals("/sign/signUp")) {
-			
+			// 회원 가입 기능 구현
 
 		} else if (uri.equals("/sign/signIn")) {
-
+			// 로그인 기능 구현
 
 		} else if (uri.equals("/sign/signOut")) {
-
+			// 로그 아웃 기능 구현
+			
 		} 
 
 	} 
@@ -46,15 +47,14 @@ public class UsersServlet extends HttpServlet {
 		String uri = req.getRequestURI();
 
 		if (uri.equals("/sign/signup")) {
-			
-		
-		} else if (uri.equals("/sign/signup")) {
-			
+			// 회원 가입 기능 구현
 		
 		} else if (uri.equals("/sign/signIn")) {
+			// 로그인 기능 구현
 
-		}else if (uri.equals("/sign/signWithdraw")) {
-
+		} else if (uri.equals("/sign/signWithdraw")) {
+			// 회원 탈퇴 기능 구현
+			
 		}
 	} 
 		
