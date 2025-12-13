@@ -11,6 +11,13 @@ public class SignInForm {
 	
 	public boolean isValid() {
 		Boolean result = true;
+		// equals(null)을 하면 NullPointerException 발생
+		if (userId == null || userId.isEmpty()) { 
+			result = false;
+		}
+		if (userPw == null || userPw.isEmpty()) {
+			result = false;
+		}
 		return result;
 	}
 
