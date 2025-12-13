@@ -44,7 +44,14 @@ public class UsersServlet extends HttpServlet {
 	           .forward(req, res);
 		} else if (uri.equals("/sign/signOut")) {
 			// 로그 아웃 기능 구현
+			HttpSession session = req.getSession(false); // 기존 세션이 존재하는지 확인 (없으면 null 반환)
 			
+			if (session != null) {
+				session.invalidate(); // 세션이 있다면 invalidate();
+			}
+			
+			// 로그아웃 후 로그인 페이지로 다시 돌아가기
+			res.sendRedirect(req.getContextPath() + "/signIn.jsp?msg=logout");
 		} 
 
 	} 

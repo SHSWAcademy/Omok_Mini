@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%-- <%
-String userId = (String) session.getAttribute("user_id");
+<%-- 
+<%
+String userId = (String) session.getAttribute("user_id"); // user 객체 받도록 바꾸기
 if(userId == null) {
     // 로그인 안 했으면 로그인 페이지로 리다이렉트
     response.sendRedirect("/Omok/login.jsp");
