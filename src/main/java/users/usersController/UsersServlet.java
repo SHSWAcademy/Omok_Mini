@@ -71,7 +71,7 @@ public class UsersServlet extends HttpServlet {
 			if(joinform.JoinValidation()) {
 				boolean SignFormChk = USERSERVICE.SignUp(joinform);
 				if (SignFormChk) {
-					res.sendRedirect("/Omok/main.jsp");	//회원가입 성공 시
+					res.sendRedirect(req.getContextPath() + "/main.jsp");	//회원가입 성공 시
 				} else {
 					req.setAttribute("errorMessage", "이미 존재하는 ID입니다.");
 					req.getRequestDispatcher("/signUp.jsp").forward(req, res);

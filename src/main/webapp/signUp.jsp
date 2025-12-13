@@ -84,7 +84,7 @@
 <body>
 
     <div class="login-container">
-        <form action="/Omok/sign/signUp" method="post">
+        <form action="${pageContext.request.contextPath}/sign/signUp" method="post">
             <div class="input-group">
                 <label for="user_id">ID</label>
                 <input type="text" id="user_id" name="user_id" placeholder="아이디" required>
