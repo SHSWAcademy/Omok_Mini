@@ -22,9 +22,9 @@ public abstract class OmokRepository <E, ID> {
         }
         // 환경에 맞게 JDBC URL, 계정, 비밀번호 수정
         return DriverManager.getConnection(
-        		"jdbc:mariadb://localhost:3306/omokdb?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8",
-      	        "root",
-      	        "qjarms98#" 
+        		"jdbc:mariadb://omokdb.ctacq0y0i2c0.ap-northeast-2.rds.amazonaws.com/omokdb?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8",
+      	        "admin",
+      	        "qorhqtlrp" 
         	);
     }
 

@@ -89,6 +89,7 @@ public class UsersServlet extends HttpServlet {
 	               req.getRequestDispatcher("/signIn.jsp").forward(req, res);
 	               return;
 	            } else { // DB에서 불러온 user가 정상이면 메인 화면으로 보냄
+	            	System.out.println("여기들어옴");
 	                HttpSession session = req.getSession();   //세션 저장
 	                session.setAttribute("loginUser", user); // UserVO 객체째로 저장. DB 조회를 다시 안 해도 괜찮도록
 	                //상원님이 말한 prg 패턴인듯 리다이렉트를해야 get요청으로 이동해서 post요청이 안나는듯?

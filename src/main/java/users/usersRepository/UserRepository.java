@@ -45,7 +45,7 @@ public class UserRepository extends OmokRepository<User, String>{
 
 	@Override
 	public User findById(String id) {
-		String sql = "SELECT * FROM users WHERE user_id = ?";
+		String sql = "SELECT * FROM omokdb.USERS WHERE user_id = ?";
 	    
 	    return executeQuery(sql,
 	        pstmt -> pstmt.setString(1, id),
