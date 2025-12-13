@@ -11,6 +11,12 @@ public class SignInForm {
 	
 	public boolean isValid(String userId, String userPw) {
 		Boolean result = true;
+		if (userId.equals(null) || userId.equals("")) {
+			result = false;
+		}
+		if (userPw.equals(null) || userPw.equals("")) {
+			result = false;
+		}
 		return result;
 	}
 
